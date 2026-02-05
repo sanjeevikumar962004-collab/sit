@@ -98,14 +98,32 @@
             align-items: center;
         }
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            letter-spacing: -1px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+        /* --- Logo Image Styling --- */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 40px; /* Adjust height to fit your navbar */
+    width: auto;  /* Maintains aspect ratio */
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+    transform: scale(1.05);
+}
+
+/* Optional: If using a white logo on dark background and it needs to pop */
+/* .logo-img { filter: drop-shadow(0 0 5px rgba(99, 102, 241, 0.5)); } */
+
+/* Responsive adjustment for mobile */
+@media (max-width: 480px) {
+    .logo-img {
+        height: 32px; 
+    }
+}
 
         /* Desktop Nav Styles */
         .nav-wrapper {
@@ -501,9 +519,10 @@
         <div class="container">
             <nav>
                 <div class="logo">
-                    <i class="fa-solid fa-layer-group gradient-text"></i>
-                    <span>NexStream</span>
-                </div>
+    <a href="/">
+        <img src="./stackly.webp" alt="NexStream Logo" class="logo-img">
+    </a>
+</div>
                 
                 <!-- Toggle Button (Outside Wrapper) -->
                 <div class="menu-toggle" id="mobile-menu">
@@ -763,13 +782,14 @@
     <footer>
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-brand">
-                    <div class="logo">
-                        <i class="fa-solid fa-layer-group gradient-text"></i>
-                        <span>NexStream</span>
-                    </div>
-                    <p>Empowering the world's software with intelligent infrastructure solutions.</p>
-                </div>
+               <div class="footer-brand">
+    <div class="logo">
+        <a href="/">
+            <img src="./stackly.webp" alt="NexStream Logo" class="logo-img">
+        </a>
+    </div>
+    <p>Empowering the world's software with intelligent infrastructure solutions.</p>
+</div>
                 <div class="footer-col">
                     <h4>Product</h4>
                     <ul>
@@ -796,7 +816,7 @@
                 </div>
             </div>
             <div style="text-align: center; color: #475569; font-size: 0.85rem; margin-top: 2rem;">
-                &copy; 2024 NexStream Inc. All rights reserved.
+                &copy; 2024 Stackly Inc. All rights reserved.
             </div>
         </div>
     </footer>
